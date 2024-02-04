@@ -5,6 +5,7 @@
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
 const hre = require("hardhat");
+require("dotenv").config();
 
 async function main() {
   const NAME = 'NFT Punks'
@@ -12,7 +13,7 @@ async function main() {
   const COST = ethers.utils.parseUnits('10', 'ether')
   const MAX_SUPPLY = 25
   const NFT_MINT_DATE = (Date.now() + 60000).toString().slice(0, 10)
-  const IPFS_METADATA_URI = 'ipfs://QmQPEMsfd1tJnqYPbnTQCjoa8vczfsV1FmqZWgRdNQ7z3g/'
+  const IPFS_METADATA_URI = process.env.IPFS_METADATA_URI || ""
 
   // Deploy NFT
   const NFT = await hre.ethers.getContractFactory('NFT')
