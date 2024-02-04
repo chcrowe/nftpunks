@@ -5,14 +5,15 @@ import logo from '../logo.png';
 const Navigation = ({ account }) => {
   return (
     <Navbar className='my-3'>
+      <div className="logo">
       <img
         alt="logo"
         src={logo}
-        width="40"
-        height="40"
-        className="d-inline-block align-top mx-3"
+        width="128"
+        height="128"        
       />
-      <Navbar.Brand href="#">NFT Punks</Navbar.Brand>
+      </div>
+      <Navbar.Brand href="#" className="brand-margin">NFT Punks</Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>
           {account}
