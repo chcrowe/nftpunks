@@ -61,6 +61,12 @@ describe('NFT', () => {
       expect(await nft.owner()).to.equal(deployer.address)
     })
 
+    it('returns the updated cost to mint after price updates', async () => {
+      const newCost = ether(12)
+      await nft.setCost(newCost)     
+      expect(await nft.cost()).to.equal(newCost)
+    })
+
   })
 
 
